@@ -1,4 +1,4 @@
-# spec-to-tex
+# spec-to-tex (WIP)
 Using GPT-4V to generate LaTeX templates for problem sets or writeups based on a homework assignment or spec.
 
 The program is currently a CLI tool.
