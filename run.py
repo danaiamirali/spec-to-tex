@@ -5,7 +5,7 @@ from pdf2image import convert_from_path
 from dotenv import load_dotenv
 import os
 
-from model.models import TeXGenerator
+from model.models import TeXGenerator, TeXFixer
 
 """
 Given one specification file, which may be a homework assignment, project spec, etc.
@@ -50,9 +50,11 @@ if __name__ == "__main__":
     encoded_images = [encode_image(os.path.join("tmp", image)) for image in os.listdir("tmp")]
     shutil.rmtree("tmp")
 
-    generator = TeXGenerator(args.precise)
-
+    generator = TeXGenerator(args.precise, verbose=args.verbose)
     generated_tex = generator(encoded_images, API_KEY)
+
+    fixer = TeXFixer(verbose=args.verbose)
+    fixed_tex = fixer(generated_tex, API_KEY)
 
     # save the tex
     with open("output.tex", "w") as f:
