@@ -9,7 +9,7 @@ SYSTEM_MESSAGE = """
 """
 
 _general_instr = """
-The template should be divided into sections according to the document structure, and contain questions or prompts from the document, verbatim, for the user to answer.
+The template should be divided into sections according to the document structure, and contain questions or prompts from the document, verbatim, for the user to answer. The questions and/or prompts should be clearly marked and separated from the rest of the text, and should be rewritten, verbatim, and in their entirety.
 
 There should be Solution sections for the user to fill in their answers, responses, or solutions to each question or prompt.
 """
@@ -63,3 +63,11 @@ Here is what the TeX template looks like so far - continue from here:
 {tex_so_far}
 
 """.format(_general_instr=_general_instr, schema="{schema}", tex_so_far="{tex_so_far}")
+
+DEBUG_PROMPT = """
+Will the following LaTeX render and compile correctly, with no errors?
+
+Your response should resemble the following JSON schema: {schema}
+
+{tex}
+"""
