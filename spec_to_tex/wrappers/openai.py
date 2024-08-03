@@ -33,7 +33,7 @@ def _get_headers_and_payload(api_key: str, prompt: str, system_message: str | No
     } if system_message else None
 
     payload = {
-        "model": "gpt-4-turbo",
+        "model": "gpt-4o-mini",
         "response_format":{"type": "json_object"},
         "messages": [
 
