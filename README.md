@@ -5,7 +5,7 @@ The program is currently a CLI tool.
 
 ## Usage
 ```sh
-python3 cli.py {path-to-file-to-convert} {command-line args}
+python3 -m spec_to_tex {path-to-file-to-convert} {command-line args}
 ```
 
 The command line args are as follows:
@@ -17,5 +17,5 @@ The command line args are as follows:
 
 Example for using OpenAI:
 ```sh
-python3 cli.py documents/hw.pdf --mode="openai" --openai="sk102031" --verbose
+python3 -m spec_to_tex documents/hw.pdf --mode="openai" --openai="apikey" --verbose
 ```
